@@ -16,4 +16,14 @@ list = text.split(" ")
 i = 0
 for i in range(len(list)):
     if(list[i].find("total") != -1):
-        print(list[i])
+        total = list[i]
+
+try:
+    total = total.replace("total", "")
+    total = total.replace("€", "")
+    total = total.replace("$", "")
+    total = total.replace(",", ".")
+    total = total.replace("\n", "")
+except:
+    print("epic fail")
+print(float(total))
