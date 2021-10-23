@@ -5,6 +5,7 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Users\mats.lillas\AppData\Local\Pro
 
 folder = r'images\\'
 totalSum = 0.0
+totalVar = 'total'
 
 def rename():
     count = 0
@@ -26,11 +27,11 @@ for num in range(len(os.listdir('images'))):
 
     i = 0
     for i in range(len(list)):
-        if(list[i].find("total") != -1):
+        if(list[i].find(totalVar) != -1):
             total = list[i]
 
     try:
-        total = total.replace("total", "")
+        total = total.replace(totalVar, "")
         total = total.replace("€", "")
         total = total.replace("$", "")
         total = total.replace(",", ".")
